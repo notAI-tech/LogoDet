@@ -1,0 +1,5 @@
+keras-retinanet==0.5.1
+opencv-python-headless==4.2.0.34
+pydload
+keras==2.31
+tensorflow==2.2.0
