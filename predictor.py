@@ -45,11 +45,38 @@ def detect_single(img_path, min_prob=0.4):
             continue
         box = box.astype(int).tolist()
         label = classes[label]
-        processed_boxes.append({'box': box, 'score': score, 'label': label})
+        processed_boxes.append({'box': box, 'score': float(score), 'label': label})
         
     return processed_boxes
 
 
 def detect_batch():
-    # TODO
+    # TODO for videos
     pass
+
+def predictor(image_paths=[], batch_size=1):
+    results = []
+    for image_path in image_paths:
+        try:
+            results.append(detect_single(image_path))
+        except Exception as ex:
+            results.append([f'Failed with exception: {ex}'])
+    
+    return results
+
+if __name__ == '__main__':
+    import json
+    import pickle
+    import base64
+
+    example = ["example.jpg"]
+
+    print(json.dumps(predictor(example)))
+
+    example = {
+        file_name: base64.b64encode(open(file_name, "rb").read()).decode("utf-8")
+        for file_name in example
+    }
+
+    pickle.dump(example, open("example.pkl", "wb"), protocol=2)
+    
