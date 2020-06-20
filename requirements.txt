@@ -1,4 +1,4 @@
-keras-retinanet==0.5.1
+https://github.com/notAI-tech/LogoDet/releases/download/292_classes_v1/keras-retinanet-20-06-2020.zip
 opencv-python-headless==4.2.0.34
 pydload
 keras==2.31
