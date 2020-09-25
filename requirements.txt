@@ -2,4 +2,4 @@ https://github.com/notAI-tech/LogoDet/releases/download/292_classes_v1/keras-ret
 opencv-python-headless==4.2.0.34
 pydload
 keras==2.3.1
-tensorflow==2.2.0
+tensorflow==2.2.1
